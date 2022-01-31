@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <form action = "/action_page.php">
+        <fieldset>
+            <legend>Personal Information</legend>
+            <p>Username: <input type="text" size = "30" name="username" required/></p>
+            <p>Password: <input type="password" size = "30" name="passwordtext" size = "30"/></p>
+            <p>State: <input type="text" name="state_code" pattern="[A-Z]{2}" title="Two letter state code" size = "2" required/></p>
+            <p>Email: <input type="email" name="email" id="email" required/></p>
+            <p>URL: <input type="url" name="url" id="url" required/></p>
+
+            <p><input type="submit" value="Submit"/></p> 
+
+        </fieldset>
+    </form>
+</html>
