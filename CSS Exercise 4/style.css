@@ -1,0 +1,23 @@
+.outerlist {
+    list-style-type: upper-roman;
+}
+
+.middlelist {
+    list-style-type: upper-alpha;
+}
+
+.innerlist {
+    list-style-type: decimal;
+}
+
+.pink {
+    color: pink;
+}
+
+.blue {
+    color: blue;
+}
+
+.red {
+    color: red;
+}

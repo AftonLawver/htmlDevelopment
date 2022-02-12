@@ -1,0 +1,25 @@
+table {
+    border: 3px solid green;
+    font-family: Helvetica;
+}
+
+th {
+    padding: 10px;
+    border-color: black;
+    border-style: solid;
+    
+}
+
+td {
+    padding: 10px;
+    border-color: black;
+    border-style: solid;
+}
+
+a:link {
+     color: black;
+}
+
+a:hover {
+    color: blue;
+}

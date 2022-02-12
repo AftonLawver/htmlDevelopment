@@ -1,0 +1,22 @@
+h1 {
+    font-size: 40px;
+    color: green;
+    border: 2px solid green;
+    width: 50%;
+}
+
+table {
+    border: 2px gray solid;
+    width: 50%;
+}
+
+th {
+    border: 2px black solid;
+    text-align: center;
+}
+
+td {
+    border: 2px solid green;
+    text-align: left;
+    color: green;
+}
