@@ -1,0 +1,26 @@
+
+h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+
+h1 a{
+    text-decoration: none;
+    color: #ce475b;
+    font-size: 36px;
+    font-family: Verdana;
+
+}
+
+h2{
+    font-style: italic;
+    font-size: 20px;
+}
+span a{
+    text-decoration: none;
+}
+
+.inline{
+    display: inline;
+}
+    

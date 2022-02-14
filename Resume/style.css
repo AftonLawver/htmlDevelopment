@@ -193,7 +193,7 @@ body{
     top: 14px;
     left: -21.5px;
     width: 3px;
-    height: 93px;
+    height: 115px;
     background: #0bb5f4;
 }
 
@@ -214,7 +214,7 @@ body{
     top: 14px;
     left: -21.5px;
     width: 3px;
-    height: 56px;
+    height: 122px;
     background: #0bb5f4;
 }
 
@@ -250,3 +250,4 @@ body{
 .resume .resume_right .resume_hobbies ul li:last-child:before{
     display: none;
 }
+
