@@ -1,18 +1,32 @@
-h2, h3, h4, h5, h6 {
-    font-weight: normal;
+* {
     font-family: Verdana;
 }
 
 
+p, h2, h3, h4, h5, h6 {
+    margin-left: 125px;
+    margin-right: 125px;
+    font-weight: normal;
+}
+
 h1 {
-    text-align: center;
+    color: #3B92C0;
+    margin-left: 125px;
+    margin-top: 50px;
+    margin-bottom: 5px;
     text-decoration: none;
     font-size: 36px;
 }
 
 h3{
+    margin-top: 5px;
+    margin-bottom: 40px;
     font-style: italic;
-    font-size: 20px;
+    font-size: 16px;
+}
+f
+h5 {
+    margin-bottom: 20px;
 }
 
 .names {
@@ -20,18 +34,48 @@ h3{
 }
 
 h2 {
-    text-align: center;
+    margin-left: 125px;
     text-decoration: none;
 }
 
+th, tr, td {
+    border: 2px solid black;
+    padding: 25px;
+}
+
 table {
-    border: 1px solid black;
+    margin-right: 125px;
+    margin-left: 125px;
     border-collapse: collapse;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 15px;
     font-size: 20px;
 }
 
+td {
+    text-align: center;
+}
 
+footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+p {
+    font-size: 14px;
+}
+
+.growth_conditions h2{
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+
+.semi_bold {
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.regular{
+    margin-top: 3px;
+}
 
