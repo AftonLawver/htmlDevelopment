@@ -15,16 +15,28 @@ header > h1 {
 
 }
 
-h1 a{
+h1 {
+    margin-bottom:5px;
+}
+
+p {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+body > header > h1 > a{
     text-decoration: none;
-    color: #ce475b;
+    color: #3B92C0;
     font-size: 36px;
     font-family: Verdana;
+    
 }
 
 body > header h2{
+    margin-top: 5px;
     font-style: italic;
-    font-size: 20px;
+    font-size: 18px;
+    margin-bottom: 25px;
 }
 span a{
     text-decoration: none;
@@ -59,6 +71,7 @@ nav > ul > li {
 }
 
 nav > ul > li > a {
+    margin-top: 10px;
     font-size: 20px;
     text-align: left;
 }
@@ -69,7 +82,9 @@ nav > ul time {
 }
 
 nav > ul p {
+    margin-top: 8px;
     text-align: left;
+    margin-bottom: 10px;
 }
 
 sup {
