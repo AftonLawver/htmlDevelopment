@@ -20,12 +20,18 @@ table, td, th{
 
 }
 
-table {
-    width: 80%;
+.traveler_info {
+    width: 60%;
     table-layout: auto;
 }
 
-input {
+.trip_info {
+    width: 60%;
+    table-layout: auto;
+}
+
+
+input[type=text] {
     width: 100%;
 }
 
@@ -41,18 +47,47 @@ td {
 }
 
 .controls {
-    display:flex;
-    margin-right: 425px;
-    
-
+    display:flex; 
     
 }
 
 .radio {
     flex: 1 0;
     display: flex;
-    align-items: left;
     float:left;
 }
 
+.checkbox {
+    flex: 1 0;
+    display: flex;
+    float:left;
+}
 
+textarea {
+    width: 100%;
+    height: 100%;
+}
+
+td:hover {
+    border-color: red;
+}
+
+th:hover {
+    border-color: red;
+}
+
+.button {
+    color: white;
+    font-family:'Times New Roman';
+    font-weight: bold;
+    background-color:green;
+    border-radius: 16px;
+    height: 40px;
+    padding: 8px 8px;
+    border: none;
+    
+}
+
+.button:hover {
+    background-color: blue;
+  }

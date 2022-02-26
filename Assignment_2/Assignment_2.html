@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>Travel Expense Report</title>
@@ -16,7 +16,7 @@
                 Traveler Information
             </h1>
         
-            <table>
+            <table class="traveler_info">
                 <tr>
                     <td>
                         Employee ID: 
@@ -86,7 +86,7 @@
             <h1>
                 Trip Information
             </h1>
-            <table>
+            <table class="trip_info">
                 <tr>
                     <th colspan = "2">
                         Dates of Travel
@@ -161,7 +161,7 @@
                         Description: 
                     </td>
                     <td colspan="3">
-                        <textarea name="description" rows="4" cols="95">Your text here</textarea>
+                        <textarea name="description" placeholder="Your text here" rows="4" cols="95"></textarea>
                     </td>
                 </tr>
                 <tr>
@@ -232,17 +232,18 @@
                         <input type="text" name="AutoMileage1"/>
                     </td>
                     <td>
-                        <div class="checkbox">
-                            <input type="checkbox" name="Breakfast" id="bf1">
-                            <label for="bf1">Breakfast</label>
-                            <input type="checkbox" name="Lunch" id="lun1">
-                            <label for="lun1">Lunch</label>
-                            <input type="checkbox" name="Dinner" id="din1">
-                            <label for="din1">Dinner</label>
-                        
+                        <div class="controls">
+                            <label class="checkbox">
+                                <input type="checkbox" name="level" value="B"/>Breakfast
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="level" value="L"/>Lunch
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="level" value="D"/>Dinner
+                            </label>
+                        </div>
                     </td>
-                    
-                    
                 </tr>
                 <tr>
                     <td>
@@ -258,9 +259,17 @@
                         <input type="text" name="AutoMileage2"/>
                     </td>
                     <td>
-                        <input type="checkbox" name="Breakfast"/>Breakfast
-                        <input type="checkbox" name="Lunch"/>Lunch
-                        <input type="checkbox" name="Dinner"/>Dinner                       
+                        <div class="controls">
+                            <label class="checkbox">
+                                <input type="checkbox" name="level" value="B"/>Breakfast
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="level" value="L"/>Lunch
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="level" value="D"/>Dinner
+                            </label>
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -277,14 +286,26 @@
                         <input type="text" name="AutoMileage3"/>
                     </td>
                     <td>
-                        <input class="inline" type="checkbox" name="Breakfast"/>Breakfast
-                        <input class="inline" type="checkbox" name="Lunch"/>Lunch
-                        <input class="inline" type="checkbox" name="Dinner"/>Dinner
+                        <div class="controls">
+                            <label class="checkbox">
+                                <input type="checkbox" name="level" value="B"/>Breakfast
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="level" value="L"/>Lunch
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="level" value="D"/>Dinner
+                            </label>
+                        </div>
                     </td>
                 </tr>
             </table>
 
             <hr>
+            <p>
+                <input type="submit" name="send" class="button" value="Send Report"/>
+                <input type="reset" name="clear" class="button" value="Clear Form"/>
+            </p>
 
         </form>
 
