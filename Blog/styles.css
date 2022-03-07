@@ -114,8 +114,15 @@ article > header {
   
 article > header > h1 {
     margin-bottom: 0em;
+    font-size: 30px;
 }
 
 article > header > h2 {
-    margin-bottom: 0em;
+    margin: 0em;
+    font-size: 18px;
+}
+
+article > header > h3 {
+    margin: 0em;
+    font-size: 18px;
 }
