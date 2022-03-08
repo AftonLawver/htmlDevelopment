@@ -94,5 +94,51 @@ footer > p >a {
 }
 
 a:hover {
-    color: #3B92C0;
+    color: rgb(59, 146, 192);
+}
+
+.nav {
+    background-color: transparent;
+    color: #000000;
+    list-style: none;
+    text-align: right;
+    padding: 10px 0 0 0;
+}
+
+.nav > li {
+    display: inline-block;
+    padding: 0 25px 0 25px;
+    font-size: 18px;
+}
+
+.nav > li > a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.nav > li > a:hover {
+    color: #c1c1c1;
+}
+
+.logo {
+    color: #000000;
+    float: left;
+    padding-left: 25px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logo > a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.banner {
+    width: 100%;
+    display: block;
+}
+
+.banner > .banner-image {
+    width: 100%;
+    display: block;
 }
