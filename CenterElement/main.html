@@ -2,15 +2,38 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="styles.css" type="text/css">
+        <style>
+            body {
+                background: white;
+            }
+
+            section {
+                background: rgb(0, 0, 0);
+                color: white;
+                border-radius: 1em;
+                padding: 1em;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%) 
+            }
+
+            section > h1, p {
+                text-align: center;
+            }
+        </style>
     </head>
     <body>
         <section>
-            <h1>Nicely centered</h1>
-            <p>This text block is vertically centered.</p>
-            <p>Horizontally, too, if the window is wide enough.</p>
+            <h1>Text box</h1>
+            <h1>Can have multiple lines of text.</h1>
+            <p>
+                And different sized fonts.
+            </p>
+            <p>
+                Box will be as big as needed, depending on how much text there is to display.
+            </p>
           </section>
     </body>
 </html>
-
-<!-- https://www.w3.org/Style/Examples/007/center.en.html#hv3 -->
