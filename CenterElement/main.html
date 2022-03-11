@@ -3,13 +3,20 @@
     <head>
         <meta charset="UTF-8">
         <style>
+            html {
+                height: 100%;
+            }
             body {
-                background: white;
+                margin:0;
+                height: 100%;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background: linear-gradient(black, rgb(139, 139, 139)); 
             }
 
             section {
-                background: rgb(0, 0, 0);
-                color: white;
+                background: white;
+                color: black;
                 border-radius: 1em;
                 padding: 1em;
                 position: absolute;
@@ -17,22 +24,41 @@
                 left: 50%;
                 margin-right: -50%;
                 transform: translate(-50%, -50%) 
+                
             }
 
             section > h1, p {
                 text-align: center;
             }
+
+            .right {
+                width: 45px;
+                height: 45px;
+                background-color: transparent;
+                vertical-align: middle;
+                
+                
+            }
+
+            .left {
+                width: 45px;
+                height: 45px;
+                background-color: transparent;
+                vertical-align: middle;
+                
+            }
         </style>
     </head>
     <body>
         <section>
-            <h1>Text box</h1>
-            <h1>Can have multiple lines of text.</h1>
+            <h1>
+                <img class="left" src="redshield.png" alt="red shield">
+                PCJIMS Public Defender
+                <img class="right" src="redshield.png" alt="red shield">
+            </h1>
+            <h1>You have completed successful authorization.</h1>
             <p>
-                And different sized fonts.
-            </p>
-            <p>
-                Box will be as big as needed, depending on how much text there is to display.
+                By completing this step, you can now securely use all email features of the software. 
             </p>
           </section>
     </body>
