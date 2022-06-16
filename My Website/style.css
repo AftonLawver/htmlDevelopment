@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    background-image: linear-gradient(to bottom right, #CCE5FF, #e0e0e0);
+}
+
+html {
+    position: relative;
+}
+
+header {
+    text-align:center;
+    background-color: transparent;
+    color: #000000;
+    list-style: none;
+    text-align: center;
+    padding: 5px 0 0 0;
+}
+
+header > ul > li {
+    display: inline-block;
+    padding: 0 20px 0 20px;
+    font-size: 18px;
+}
+
+header > ul > li > a {
+    text-decoration: none;
+    color: #000000;
+}
+
+header > ul > li > a:hover {
+    color: #c1c1c1;
+}
+
+main {
+    text-align: center;
+}
+
+main > .about {
+    width: 65vw;
+    margin: auto;
+    padding: 20px 30px;
+    float: right;
+}
+
+blockquote p {
+    padding: 10px;
+    background: #eee;
+    border-radius: 5px;
+}
+
+blockquote p::before {
+    content: '\201C';
+}
+
+blockquote p::after {
+    content: '\201D';
+}
+
+body {
+    position: relative;
+}
+
+body > main > .quotes {
+    width: 30%;
+    padding-left: 15px;
+    margin-left: 15px;
+    float: left;
+    font-style: italic;
+    background-color: lightgray;
+    min-width: 260px;
+    max-width: 350px;
+}
+
+.about {
+    background-color: #fff;
+    padding: 40px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.about > p {
+    margin-top: 16px;
+    line-height: 24px;
+    margin-left: 12px;
+}
+
+.about:last-child {
+    margin-bottom: 0;
+}
+
+body > footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
