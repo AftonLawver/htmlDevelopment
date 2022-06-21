@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+    font-family: opensans-bold sans-serif;
+}
+
+body, html {
+    background-color: #CCE5FF;
+}
+
+html {
+    margin: 0;
+
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    text-align:center;
+    background-color: transparent;
+    color: #000000;
+    list-style: none;
+    padding: 0px 20px 2px 20px;
+    border-bottom: 1px solid black;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 0;
+}
+
+ul {
+    padding: 10px 0 10px 0;
+    list-style-type: none;
+    margin: 0;
+}
+
+header > ul > li {
+    display: inline-block;
+    padding: 0 20px 0 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+header > ul > li > a {
+    text-decoration: none;
+    color: #000000;
+}
+
+header > ul > li > a:hover {
+    color: #c1c1c1;
+}
+
+.first_section {
+    background-image: url('../images/section3.jpg');
+    backgroudn-size: cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+
+}
+
+.main_area > .name {
+    text-align: center;
+    font-size: 85px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    margin: 0 0 20px 0;
+}
+main > .main_area > p {
+    margin: 0 20px 0 20px;
+}
+
+.main_area {
+    padding: 0 20px 0 20px;
+    text-align: center;
+}
+
+.main_area > .job_title > li {
+    display: inline-block;
+    list-style: none;
+    text-align: center;
+    padding: 0 5px 0 5px;
+    font-weight: 450;
+    font-size: 22px;
+}
+ul.job_title {
+    padding: 0;
+
+}
+
+.profile_pic {
+    padding: 2px;
+    border-radius: 50%;
+    float: left;
+}
+
+main {
+    text-align: center;
+}
+
+.main_area_about {
+    display: flex;
+}
+
+.main_area_about > .about_section {
+    width: 50vw;
+    font-style: normal;
+    background-color: white;
+    padding: 40px;
+    margin: 40px 20px 20px 100px;
+    border-radius: 10px;
+}
+
+blockquote p {
+    padding: 10px;
+    background: #eee;
+    border-radius: 5px;
+}
+
+blockquote p::before {
+    content: '\201C';
+}
+
+blockquote p::after {
+    content: '\201D';
+}
+
+body {
+    position: relative;
+}
+
+.main_area_about > .about_section > .quotes {
+    width: 50vw;
+    padding-left: 15px;
+    margin-left: 15px;
+    float: right;
+    font-style: italic;
+    background-color: lightgray;
+    min-width: 250px;
+}
+
+
+.about > p {
+    margin-top: 16px;
+    line-height: 24px;
+    margin-left: 12px;
+}
+
+.about:last-child {
+    margin-bottom: 0;
+}
+
+.image-grid {
+    --gap: 16px;
+    --num-cols: 4;
+    --row-height: 400px;
+    --row-height: 500px;
+    box-sizing: border-box;
+    padding: var(--gap);
+    display: grid;
+    grid-template-columns: repeat(var(--num-cols), 1fr);
+    grid-auto-rows: var(--row-height);
+    gap: var(--gap);
+    margin: 20px 90px 20px 90px;
+
+}
+
+.image-grid > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-grid-col-2 {
+    grid-column: span 2;
+}
+
+.image-grid-row-2 {
+    grid-row: span 2;
+}
