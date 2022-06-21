@@ -5,16 +5,9 @@
 
 body, html {
     background-color: #CCE5FF;
-}
-
-html {
-    margin: 0;
-
-}
-
-body {
     margin: 0;
 }
+
 
 header {
     text-align:center;
@@ -127,10 +120,6 @@ blockquote p::after {
     content: '\201D';
 }
 
-body {
-    position: relative;
-}
-
 .main_area_about > .about_section > .quotes {
     width: 50vw;
     padding-left: 15px;
@@ -152,31 +141,33 @@ body {
     margin-bottom: 0;
 }
 
-.image-grid {
-    --gap: 16px;
-    --num-cols: 4;
-    --row-height: 400px;
-    --row-height: 500px;
-    box-sizing: border-box;
-    padding: var(--gap);
-    display: grid;
-    grid-template-columns: repeat(var(--num-cols), 1fr);
-    grid-auto-rows: var(--row-height);
-    gap: var(--gap);
-    margin: 20px 90px 20px 90px;
+.table {
+    display: table;
+    border-spacing: 20px;
+    max-width: 100%;
+    margin-left:100px;
+    margin-right: 100px;
+    justify-content: center;
+}
+.caption {
+    display: table-caption;
+    font-size: xx-large;
+    text-align: center;
+    max-width: 100%;
+}
+.row {
+    display: table-row;
+    max-width: 100%;
+}
+
+.row > * {
+    display: table-cell;
+    text-align: center;
 
 }
 
-.image-grid > img {
+.row > span > img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.image-grid-col-2 {
-    grid-column: span 2;
-}
-
-.image-grid-row-2 {
-    grid-row: span 2;
+    height: auto;
+    max-width: 25vw;
 }
