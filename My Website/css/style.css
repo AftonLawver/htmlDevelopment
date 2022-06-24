@@ -212,3 +212,45 @@ footer > .footer > p{
     color: white;
     cursor: pointer;
 }
+.about_section_two {
+    margin: 50px 90px 50px 90px;
+    justify-content: center;
+}
+
+.about_section_two > table {
+    justify-content: center;
+    display: inline-block;
+}
+
+.about_section_two > table > caption {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.about_section_two > tr, th, td, table {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.about_section_two {
+    padding: 0px 40px 0px 40px;
+}
+
+input[type=text] {
+    width: 100%;
+}
+
+form {
+    display: inline-block;
+}
+
+.projects {
+    background: black;
+}
+
+.projects > h2 {
+    color: #CCE5FF;
+    padding: 40px;
+}
+
+
