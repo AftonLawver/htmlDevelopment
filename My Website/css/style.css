@@ -145,7 +145,9 @@ blockquote p::after {
     background-color: lightgray;
     min-width: 250px;
 }
-
+.quotes > aside {
+    padding-top: 25px;
+}
 
 .about > p {
     margin-top: 16px;
@@ -201,7 +203,6 @@ footer > .footer > p{
 
 .overlay > .btn {
     position: relative;
-    color: #3E5C9A;
     background: transparent;
     border: none;
     top: -27px;
@@ -220,6 +221,7 @@ footer > .footer > p{
 .about_section_two > table {
     justify-content: center;
     display: inline-block;
+
 }
 
 .about_section_two > table > caption {
@@ -252,5 +254,11 @@ form {
     color: #CCE5FF;
     padding: 40px;
 }
+
+form > table {
+    width: 55vw;
+}
+
+
 
 
