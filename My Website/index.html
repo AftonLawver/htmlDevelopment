@@ -128,7 +128,6 @@
             </div>
 
             <div class="table">
-<!--                <div class="caption">Ancient Wonders of the World</div>-->
                 <div class="row">
                     <span><img src ="images/piotr.JPG" alt="Image not found!"></span>
                     <span><img src ="images/cancun.jpg" alt="Image not found!"></span>
@@ -275,16 +274,14 @@
                 <h2 id="projectsHeader">
                     Projects
                 </h2>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
+                <h4>
+                    Play my shape transformation game!
+                </h4>
+                <h5>
+                    Please click on 4 arbitrary spots within this box, and see my shape transformation magic to happen.
+                </h5>
+
+
                 <br>
                 <br>
                 <br>
@@ -340,10 +337,9 @@
                                 Email:
                             </td>
                             <td>
-                                <input id="email" type="text" name="email" required/>
+                                <input id="email" type="text" name="email" placeholder="myname@example.com" required/>
                             </td>
                         </tr>
-
                         <tr>
                             <td colspan = "1">
                                 Address:
@@ -374,10 +370,10 @@
                                 <input type="text" name="Zipcode"/>
                             </td>
                             <td>
-                                Phone:
+                                <label for="myform_phone">Phone: </label>
                             </td>
                             <td>
-                                <input type="text" name="Phone"/>
+                                <input type="tel" name="phone" id="myform_phone" placeholder="e.g. 999-999-9999" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
                             </td>
                         </tr>
                         <tr>
@@ -409,12 +405,14 @@
                         <h3>
                             Let's Code
                         </h3>
+                        <br>
                     </div>
                     <div class="linkedin">
                         <button class="contact-button"><i class="fa-brands fa-linkedin fa-4x"></i></button>
                         <h3>
                             Let's Connect
                         </h3>
+                        <br>
                     </div>
                 </div>
 
@@ -439,7 +437,7 @@
     <footer>
         <div class="footer">
             <div class="overlay">
-                <button class="btn"><i class="fa-solid fa-circle-up fa-4x"></i></button>
+                <button class="btn"><i class="fa-solid fa-circle-up fa-4x" onclick="scrollToTop()"></i></button>
             </div>
             <p>Edited by Afton Lawver</p>
         </div>

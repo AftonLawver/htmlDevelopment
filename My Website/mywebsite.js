@@ -2,8 +2,6 @@ function submitForm() {
     if (validateName() && validateEmail()) {
         document.getElementById("paragraph").innerHTML = "Form submitted.";
     }
-
-
 }
 
 function validateName() {
@@ -29,3 +27,8 @@ function validateEmail() {
         return true;
     }
 }
+
+function scrollToTop() {
+    window.scrollTo(0, 0);
+}
+

@@ -19,7 +19,6 @@ header {
     text-transform: uppercase;
     letter-spacing: 1.5px;
     margin: 0;
-
 }
 
 ul {
@@ -46,7 +45,7 @@ header > ul > li > a:hover {
 
 .first_section {
     background-image: url('../images/section3.jpg');
-    backgroudn-size: cover;
+    background-size: cover;
     background-repeat:   no-repeat;
     background-position: center center;
     -webkit-background-size: cover;
@@ -114,7 +113,6 @@ main {
 }
 
 .main_area_about > .about_section {
-    width: 50vw;
     font-style: normal;
     background-color: white;
     padding: 40px;
@@ -137,16 +135,17 @@ blockquote p::after {
 }
 
 .main_area_about > .about_section > .quotes {
-    width: 50vw;
-    padding-left: 15px;
-    margin-left: 15px;
     float: right;
     font-style: italic;
     background-color: lightgray;
-    min-width: 250px;
+    margin-right: 10px;
 }
 .quotes > aside {
-    padding-top: 25px;
+    padding: 25px 100px 25px 50px;
+}
+
+.about_section, .quotes {
+    width: 50%;
 }
 
 .about > p {
@@ -239,7 +238,7 @@ footer > .footer > p{
     padding: 0px 40px 0px 40px;
 }
 
-input[type=text] {
+input[type=text], input[type=tel]  {
     width: 100%;
 }
 
@@ -251,7 +250,7 @@ form {
     background: black;
 }
 
-.projects > h2 {
+.projects {
     color: #CCE5FF;
     padding: 40px;
 }
@@ -277,8 +276,6 @@ form > table {
     color: white;
     cursor: pointer;
 }
-
-
 
 
 
