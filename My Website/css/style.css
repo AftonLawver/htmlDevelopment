@@ -213,6 +213,7 @@ footer > .footer > p{
     color: white;
     cursor: pointer;
 }
+
 .about_section_two {
     margin: 50px 90px 50px 90px;
     justify-content: center;
@@ -258,6 +259,25 @@ form {
 form > table {
     width: 55vw;
 }
+
+.github, .linkedin, .email-me {
+    display: inline-block;
+    width: 33%;
+    padding-top: 100px;
+}
+
+
+.contact-button {
+    background: transparent;
+    border: none;
+    color: black;
+}
+
+.contact-button:hover {
+    color: white;
+    cursor: pointer;
+}
+
 
 
 
