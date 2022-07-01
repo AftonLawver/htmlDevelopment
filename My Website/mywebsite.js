@@ -32,3 +32,26 @@ function scrollToTop() {
     window.scrollTo(0, 0);
 }
 
+function showCanvasGameBoard() {
+    var canvasBoard = document.getElementById('canvas')
+    canvasBoard.style.visibility = 'visible';
+}
+
+function showCanvasGameInstructions() {
+    var canvasInstructions = document.getElementById('canvas-instructions')
+    canvasInstructions.style.visibility = 'visible';
+}
+
+function getMousePosition(event) {
+    guessX = 0;
+    guessY = 0;
+    var x = event.offsetX;
+    var y = event.offsetY;
+    guessX = x;
+    guessY = y;
+    document.write();
+    document.write('<FONT COLOR="white">', guessX, guessY);
+
+}
+
+

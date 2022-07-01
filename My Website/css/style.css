@@ -277,5 +277,18 @@ form > table {
     cursor: pointer;
 }
 
+canvas {
+    border: 1px solid yellow;
+    width: 50vw;
+    height: 50vh;
+    visibility: hidden;
+}
+
+.projects > h5 {
+    visibility: hidden;
+}
+
+
+
 
 
