@@ -277,14 +277,17 @@
                 <h4>
                     Play my shape transformation game!
                 </h4>
-                <button class="play-button" onclick="showCanvasGameBoard(), showCanvasGameInstructions()">Play</button>
+                <button class="play-button" onclick="showCanvasGameInstructions(), showCanvasGameBoard();">Play</button>
                 <h5 id="canvas-instructions">
-                    Please click on 4 arbitrary spots within this box, and see my shape transformation magic to happen.
+                    Please click on 4 arbitrary spots within this box, and see my shape transformation magic happen.
                 </h5>
                 <br>
                 <canvas id="canvas">
                     Sorry - This page uses <code>canvas</code> and your browser doesn't support it.
                 </canvas>
+                <h1 id="status" >0 | 0</h1>
+                <h1>Clicks: <a id ="clicks">0</a></h1>
+                <h1>Points: <a id="points">Nothing yet..</a></h1>
                 <br>
                 <br>
                 <br>
@@ -418,7 +421,6 @@
                 </div>
 
             </div>
-
             <br>
             <br>
             <br>
@@ -449,4 +451,6 @@
 <!--Things to do-->
 <!--Make a scroll function that will scroll to the top of the webpage after clicking the button.-->
 <!--Fix logos so that they change color when hovered over.-->
-<!--Give buttons actions on click by using javascript.--> 
+<!--Give buttons actions on click by using javascript.-->
+<!--Create the shape game-->
+<!--Draw a shape at that point-->
