@@ -62,15 +62,17 @@ function showCanvasGameBoard() {
         counter ++;
         document.getElementById("clicks").innerHTML = counter;
         if (counter == 3) {
+
             document.querySelector("#canvas").addEventListener("click", function(event) {
                 document.getElementById("clicks").innerHTML = "Sorry no more clicks";
                 for (const [key, value] of Object.entries(dict)) {
                     var intKey = parseInt(key);
                     var intValue = parseInt(value);
-                    ctx.fillStyle = 'blue';
-                    ctx.beginPath();
-                    ctx.arc(intKey, intValue, 50, 0, Math.PI * 2);
-                    ctx.fill();
+                    drawShape(key, value);
+                    // ctx.fillStyle = 'blue';
+                    // ctx.beginPath();
+                    // ctx.arc(intKey, intValue, 50, 0, Math.PI * 2);
+                    // ctx.fill();
                 }
             });
         }
@@ -83,22 +85,97 @@ function showCanvasGameBoard() {
     });
 }
 
-function drawShapes() {
+function drawShape(x,y) {
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
-    for (const [key, value] of Object.entries(dict)) {
-        var intKey = parseInt(key);
-        var intValue = parseInt(value);
-        ctx.fillStyle = 'blue';
+    chooseColor();
+    var shape = Math.floor(Math.random() * 6) + 1;
+    document.getElementById('points').innerHTML = shape;
+    if (shape == 1) {
+        ctx.strokeStyle = 'red';
+        // line
         ctx.beginPath();
-        ctx.arc(intKey, intValue, 50, 0, Math.PI * 2);
+        ctx.moveTo(x,y);
+        ctx.lineTo(x+60, y+50);
+        ctx.lineWidth = 5;
+        ctx.stroke();
+    }
+    else if (shape == 2) {
+        // oval
+        ctx.beginPath();
+        ctx.ellipse(x, y, 50, 75, Math.PI/4, 0, 2 * Math.PI);
         ctx.fill();
     }
+    else if (shape == 3) {
+        // rectangle
+        ctx.fillRect(x, y, 100, 70);
+    }
+    else if (shape == 4) {
+        // circle
+        ctx.beginPath();
+        ctx.arc(x, y, 50, 0, Math.PI * 2);
+        ctx.fill();
+        // ctx.beginPath();
+        // ctx.moveTo(x, y);
+        // ctx.lineTo(x-50, y+50);
+        // ctx.lineTo(x+100, y);
+        // ctx.closePath();
+        // ctx.fill();
 
+    }
+    else if (shape == 5) {
+        // triangle
+        ctx.beginPath();
+        ctx.arc(x, y, 50, 0, Math.PI * 2);
+        ctx.fill();
+        // line
+        // ctx.beginPath();
+        // ctx.moveTo(x, y);
+        // ctx.lineTo(x+50, y+50);
+        // ctx.stroke();
+    }
+
+    else if (shape == 6) {
+        // square
+        ctx.fillRect(x, y, 50, 50);
+    }
 
 }
 
-
+function chooseColor() {
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const randomColor = Math.floor(Math.random() * (7 - 1 + 1)) + 1; //random number between 1-7
+    let color="red";
+    if (randomColor === 1)
+    {
+        //keep default color
+    }
+    else if (randomColor === 2)
+    {
+        color="yellow";
+    }
+    else if (randomColor === 3)
+    {
+        color="orange";
+    }
+    else if (randomColor === 4)
+    {
+        color="green";
+    }
+    else if (randomColor === 5)
+    {
+        color="cyan";
+    }
+    else if (randomColor === 6)
+    {
+        color="blue";
+    }
+    else {
+        color="purple";
+    }
+    ctx.fillStyle = color;
+}
 
 // function showCanvasGameBoard() {
 //
