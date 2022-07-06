@@ -277,7 +277,10 @@
                 <h4>
                     Play my shape transformation game!
                 </h4>
-                <button class="play-button" onclick="showCanvasGameInstructions(), showCanvasGameBoard();">Play</button>
+                <button id="restart-button" onclick="stopGame()">Restart</button>
+                <button id="play-button" class="play-button" onclick="showCanvasGameInstructions(), showCanvasGameBoard(), hidePlayButton(), showRestartButton(), showStopButton();">Play</button>
+                <button id="stop-button" onclick="stopGame()">Stop</button>
+
                 <h5 id="canvas-instructions">
                     Please click on 4 arbitrary spots within this box, and see my shape transformation magic happen.
                 </h5>

@@ -290,6 +290,10 @@ canvas {
     color: yellow;
 }
 
+#restart-button, #stop-button {
+    visibility: hidden;
+}
+
 
 
 
