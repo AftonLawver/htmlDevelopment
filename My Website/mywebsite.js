@@ -35,9 +35,8 @@ function scrollToTop() {
 var dict = {};
 var counter = 0;
 
-
-
 function showCanvasGameBoard() {
+    iterations = 0;
 
     const canvas = document.getElementById('canvas');
     canvas.style.visibility = 'visible';
@@ -67,15 +66,26 @@ function showCanvasGameBoard() {
         if (counter == 4) {
             event.stopImmediatePropagation();
             document.getElementById("clicks").innerHTML = "Sorry no more clicks";
-            for (const [key, value] of Object.entries(dict)) {
+            for (const [key, value] of Object.entries(dict))
+            {
+
                 var intKey = parseInt(key);
                 var intValue = parseInt(value);
                 drawShape(key, value);
-            }
-            // Save the canvas
+                iterations++;
+                if (iterations == 4) {
+                    document.getElementById("clicks").innerHTML = "Broke out of for loop.";
+                    break;
 
+                }
+
+                // figure out how to save all values of shapes (color, stroke color, x, y, width, height, etc).
+            }
+            //save the canvas
         }
     });
+
+    canvas.addEventListener('click', clickEffect);
 
     canvas.addEventListener('mousemove', function(event) {
         var mouseX = event.clientX - rect.left.toFixed();
@@ -85,9 +95,29 @@ function showCanvasGameBoard() {
     });
 }
 
+function copyCanvas() {
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    var imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    ctx.putImageData()
+}
+
+function saveCanvas() {
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    var imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+}
+
+function pasteCanvas(image) {
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    ctx.putImageData(image, 0, 0);
+}
+
 function drawShape(x,y) {
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
+
     chooseColor();
     var shape = Math.floor(Math.random() * 6) + 1;
     document.getElementById('points').innerHTML = shape;
@@ -117,17 +147,12 @@ function drawShape(x,y) {
     }
     else if (shape == 5) {
         // triangle
-
         ctx.beginPath();
-        ctx.arc(x, y, 50, 0, Math.PI * 2);
+        ctx.moveTo(100,100);
+        ctx.lineTo(150, 150);
+        ctx.lineTo(50, 150);
+        ctx.lineTo(100,100);
         ctx.fill();
-
-        // ctx.beginPath();
-        // ctx.moveTo(x, y);
-        // ctx.lineTo(x - 75, y + 100);
-        // // ctx.lineTo(x + 50, y + 100);
-        // ctx.lineTo(x, y);
-        // ctx.fill();
     }
 
     else if (shape == 6) {
@@ -203,9 +228,7 @@ function clearCanvas() {
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth * 0.4;
     canvas.height = window.innerHeight * 0.4;
-
-    ctx.restore();
-
+    ctx.clearRect(0 , 0, canvas.width, canvas.height);
 }
 
 function stopGame() {
@@ -217,6 +240,13 @@ function stopGame() {
 
 }
 
+function clickEffect(e){
+    var d=document.createElement("div");
+    d.className="clickEffect";
+    d.style.top=e.clientY+"px";d.style.left=e.clientX+"px";
+    document.body.appendChild(d);
+    d.addEventListener('animationend',function(){d.parentElement.removeChild(d);}.bind(this));
+}
 
 
 // function showCanvasGameBoard() {
