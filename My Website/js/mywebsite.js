@@ -65,7 +65,6 @@ function showCanvasGameBoard() {
         document.getElementById("clicks").innerHTML = counter;
         if (counter == 4) {
             event.stopImmediatePropagation();
-            document.getElementById("clicks").innerHTML = "Sorry no more clicks";
             for (const [key, value] of Object.entries(dict))
             {
 
@@ -74,7 +73,6 @@ function showCanvasGameBoard() {
                 drawShape(key, value);
                 iterations++;
                 if (iterations == 4) {
-                    document.getElementById("clicks").innerHTML = "Broke out of for loop.";
                     break;
 
                 }
@@ -120,7 +118,6 @@ function drawShape(x,y) {
 
     chooseColor();
     var shape = Math.floor(Math.random() * 6) + 1;
-    document.getElementById('points').innerHTML = shape;
     if (shape == 1) {
         // line
         ctx.beginPath();
@@ -281,11 +278,7 @@ function storeCoordinate(xVal, yVal, dict) {
     dict[xVal] = yVal;
 }
 
-function getCoordinates(dict) {
-    for (const [key, value] of Object.entries(dict)) {
-        document.getElementById("points").innerHTML = key+", "+value;
-    }
-}
+
 
 
 function showCanvasGameInstructions() {
