@@ -1,0 +1,19 @@
+{
+  "name": "htmldevelopment",
+  "version": "1.0.0",
+  "description": "Development",
+  "main": "NodeJS/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AftonLawver/htmlDevelopment.git"
+  },
+  "author": "Afton Lawver",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AftonLawver/htmlDevelopment/issues"
+  },
+  "homepage": "https://github.com/AftonLawver/htmlDevelopment#readme"
+}
