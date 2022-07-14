@@ -44,7 +44,7 @@ header > ul > li > a:hover {
 }
 
 .first_section {
-    background-image: url('../images/section3.jpg');
+    background-image: url('section3.jpg');
     background-size: cover;
     background-repeat:   no-repeat;
     background-position: center center;

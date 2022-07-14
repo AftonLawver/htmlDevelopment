@@ -2,9 +2,10 @@
   "name": "htmldevelopment",
   "version": "1.0.0",
   "description": "Development",
-  "main": "NodeJS/index.js",
+  "main": "../NodeJS/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node Website/server",
+    "dev": "nodemon index"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/AftonLawver/htmlDevelopment/issues"
   },
-  "homepage": "https://github.com/AftonLawver/htmlDevelopment#readme"
+  "homepage": "https://github.com/AftonLawver/htmlDevelopment#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
 }
