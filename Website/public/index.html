@@ -351,7 +351,7 @@
                                 Address:
                             </td>
                             <td colspan = "3">
-                                <input type="text" name="Address"/>
+                                <input id="address" type="text" name="Address"/>
                             </td>
                         </tr>
                         <tr>
@@ -359,13 +359,13 @@
                                 City:
                             </td>
                             <td>
-                                <input type="text" name="City"/>
+                                <input id="city" type="text" name="City"/>
                             </td>
                             <td>
                                 State:
                             </td>
                             <td>
-                                <input type="text" name="State"/>
+                                <input id="state" type="text" name="State"/>
                             </td>
                         </tr>
                         <tr>
@@ -373,7 +373,7 @@
                                 Zip:
                             </td>
                             <td>
-                                <input type="text" name="Zipcode"/>
+                                <input id="zipcode" type="text" name="Zipcode"/>
                             </td>
                             <td>
                                 <label for="myform_phone">Phone: </label>
@@ -387,12 +387,12 @@
                                 Comments:
                             </td>
                             <td colspan="3">
-                                <input type="text" name="Comments"/>
+                                <input id="comments" type="text" name="Comments"/>
                             </td>
                         </tr>
                     </table>
                     <p>
-                        <button type="submit" onclick="submitForm()">Submit form</button>
+                        <button id="submit-button" type="submit" onclick="submitForm()">Submit form</button>
                         <input type="reset" name="clear" class="button" value="Clear Form"/>
                         <div id="paragraph">
                         </div>

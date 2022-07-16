@@ -1,7 +1,52 @@
-function submitForm() {
+
+
+
+
+
+
+
+
+
+
+function submitForm(e) {
     if (validateName() && validateEmail()) {
+        console.log('name and email valid');
+
+        const data = getAllData();
+        // console.log(data);
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': "application/json"
+            },
+            body: JSON.stringify(data),
+
+        }
+        fetch('/', options).then(response => {
+            console.log(response);
+        });
+
         document.getElementById("paragraph").innerHTML = "Form submitted.";
     }
+}
+
+function getAllData() {
+    let date = new Date().toLocaleDateString();
+    let time = new Date().toLocaleTimeString();
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let address = document.getElementById('address').value;
+    let city = document.getElementById('city').value;
+    let state = document.getElementById('state').value;
+    let zipcode = document.getElementById('zipcode').value;
+    let phone = document.getElementById('myform_phone').value;
+    let comments = document.getElementById('comments').value;
+    return {Date: date, Time: time, Name: name, Email: email, Address: address, City: city, State: state, Zipcode: zipcode,
+            Phone: phone, Comments: comments};
+}
+
+function changeColor() {
+    document.getElementById('submit-button').style.background = 'red';
 }
 
 function validateName() {
@@ -79,7 +124,6 @@ function showCanvasGameBoard() {
 
                 // figure out how to save all values of shapes (color, stroke color, x, y, width, height, etc).
             }
-            //save the canvas
         }
     });
 
