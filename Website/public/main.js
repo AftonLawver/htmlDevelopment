@@ -1,5 +1,6 @@
 
-function submitForm() {
+
+function submitForm(e) {
     if (validateName() && validateEmail()) {
         console.log('name and email valid');
 
@@ -17,12 +18,9 @@ function submitForm() {
             console.log(response);
         });
 
-        //can reset the form for another user to input something
-        // document.querySelector('form').reset();
-
         document.getElementById("paragraph").innerHTML = "Form submitted.";
     }
-};
+}
 
 function getAllData() {
     let date = new Date().toLocaleDateString();
@@ -42,6 +40,7 @@ function getAllData() {
 function changeColor() {
     document.getElementById('submit-button').style.background = 'red';
 }
+
 
 
 function finished(err) {
