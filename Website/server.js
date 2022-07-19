@@ -28,8 +28,6 @@ app.post('/', (req, res) => {
 });
 
 
-
-
 function saveData(data) {
     fs.appendFile('data.json', data, function(err) {
         if (err) {
