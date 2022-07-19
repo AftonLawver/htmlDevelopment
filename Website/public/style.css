@@ -246,6 +246,20 @@ form {
     display: inline-block;
 }
 
+#name-label::after {
+    content: "*";
+    color: red;
+    margin-left:2px
+}
+
+#email-label::after {
+    content: "*";
+    color: red;
+    margin-left:2px
+}
+
+
+
 .projects {
     background: black;
 }

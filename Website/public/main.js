@@ -1,56 +1,35 @@
 
-
-
-
-
-
-
-
-
-
-function submitForm(e) {
+function submitForm() {
     if (validateName() && validateEmail()) {
-        console.log('name and email valid');
+        let data = {
+            time: Date.now(),
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            address: document.getElementById('address').value,
+            city: document.getElementById('city').value,
+            state: document.getElementById('state').value,
+            zipcode: document.getElementById('zipcode').value,
+            phone: document.getElementById('myform_phone').value,
+            comments: document.getElementById('comments').value,
+        };
 
-        const data = getAllData();
-        // console.log(data);
-        const options = {
-            method: 'POST',
-            headers: {
-                'Content-Type': "application/json"
-            },
-            body: JSON.stringify(data),
+        let dataForJSON = JSON.stringify(data);
 
-        }
-        fetch('/', options).then(response => {
-            console.log(response);
-        });
+
+
+        //can reset the form for another user to input something
+        // document.querySelector('form').reset();
 
         document.getElementById("paragraph").innerHTML = "Form submitted.";
     }
-}
+};
 
-function getAllData() {
-    let date = new Date().toLocaleDateString();
-    let time = new Date().toLocaleTimeString();
-    let name = document.getElementById('name').value;
-    let email = document.getElementById('email').value;
-    let address = document.getElementById('address').value;
-    let city = document.getElementById('city').value;
-    let state = document.getElementById('state').value;
-    let zipcode = document.getElementById('zipcode').value;
-    let phone = document.getElementById('myform_phone').value;
-    let comments = document.getElementById('comments').value;
-    return {Date: date, Time: time, Name: name, Email: email, Address: address, City: city, State: state, Zipcode: zipcode,
-            Phone: phone, Comments: comments};
-}
-
-function changeColor() {
-    document.getElementById('submit-button').style.background = 'red';
+function finished(err) {
+    console.log('success');
 }
 
 function validateName() {
-    var regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
+    var regName = /^[a-zA-Z]+ [a-zA-Z]+\s{0,}$/;
     var name = document.getElementById('name').value;
     if(!regName.test(name)) {
         alert('Please enter your full name (first & last name).');
@@ -62,11 +41,23 @@ function validateName() {
 }
 
 function validateEmail() {
-    var regEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+    var regEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}\s{0,}$/;
     var emailAddress = document.getElementById('email').value;
     if (!regEmail.test(emailAddress)) {
         alert("Please enter a valid email address.");
         document.getElementById('email').focus();
+        return false;
+    }else {
+        return true;
+    }
+}
+
+function validatePhoneNumber() {
+    var regPhone = /^[0-9]{3}[-][0-9]{3}[-][0-9]{4}$/;
+    var phoneNumber = document.getElementById("myform_phone").value;
+    if(!regPhone.test(phoneNumber)) {
+        alert("Please enter a valid phone number.");
+        document.getElementById("myform_phone").focus();
         return false;
     }else {
         return true;
@@ -124,6 +115,7 @@ function showCanvasGameBoard() {
 
                 // figure out how to save all values of shapes (color, stroke color, x, y, width, height, etc).
             }
+            //save the canvas
         }
     });
 

@@ -30,3 +30,12 @@ app.post('/', (req, res) => {
 
 
 
+function saveData(data) {
+    fs.appendFile('data.json', data, function(err) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('Append operation complete.');
+        }
+    })
+}
