@@ -18,8 +18,24 @@ function submitForm(e) {
             console.log(response);
         });
 
-        document.getElementById("paragraph").innerHTML = "Form submitted.";
+
     }
+}
+
+function sendEmail() {
+    const data = getAllData();
+    // console.log(data);
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': "application/json"
+        },
+        body: JSON.stringify(data),
+
+    }
+    fetch('/send', options).then(response => {
+        console.log(response);
+    });
 }
 
 function getAllData() {
@@ -39,12 +55,6 @@ function getAllData() {
 
 function changeColor() {
     document.getElementById('submit-button').style.background = 'red';
-}
-
-
-
-function finished(err) {
-    console.log('success');
 }
 
 function validateName() {
