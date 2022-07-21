@@ -2,22 +2,45 @@
 
 function submitForm(e) {
     if (validateName() && validateEmail()) {
-        console.log('name and email valid');
+        if (document.getElementById('myform_phone').value == null) {
+            console.log('name and email valid');
 
-        const data = getAllData();
-        // console.log(data);
-        const options = {
-            method: 'POST',
-            // url: 'http://url.com/resource',
-            headers: {
-                'Content-Type': "application/json"
-            },
-            body: JSON.stringify(data),
+            const data = getAllData();
+            // console.log(data);
+            const options = {
+                method: 'POST',
+                // url: 'http://url.com/resource',
+                headers: {
+                    'Content-Type': "application/json"
+                },
+                body: JSON.stringify(data),
 
+            }
+            fetch('/update', options).then(response => {
+                console.log(response);
+            });
         }
-        fetch('/update', options).then(response => {
-            console.log(response);
-        });
+        else {
+            if (validatePhoneNumber()) {
+                console.log('name and email valid');
+
+                const data = getAllData();
+                // console.log(data);
+                const options = {
+                    method: 'POST',
+                    // url: 'http://url.com/resource',
+                    headers: {
+                        'Content-Type': "application/json"
+                    },
+                    body: JSON.stringify(data),
+
+                }
+                fetch('/update', options).then(response => {
+                    console.log(response);
+                });
+            }
+        }
+
 
 
     }
@@ -78,7 +101,7 @@ function validateEmail() {
     var regEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}\s{0,}$/;
     var emailAddress = document.getElementById('email').value;
     if (!regEmail.test(emailAddress)) {
-        alert("Please enter a valid email address.");
+        alert("Please enter a valid phone number.");
         document.getElementById('email').focus();
         return false;
     }else {

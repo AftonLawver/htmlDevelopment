@@ -246,18 +246,22 @@ form {
     display: inline-block;
 }
 
-#name-label::after {
-    content: "*";
+#name-label::before {
+    content: "* ";
     color: red;
     margin-left:2px
 }
 
-#email-label::after {
-    content: "*";
+#email-label::before {
+    content: "* ";
     color: red;
     margin-left:2px
 }
 
+.red_text {
+    color: red;
+    font-size: 14px;
+}
 
 
 .projects {
