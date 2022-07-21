@@ -1,4 +1,23 @@
 
+let btn = document.getElementById('formSubmit');
+btn.addEventListener('click', () => {
+    let p = new Promise((resolve, reject) => {
+        let result = validateForm();
+        if (result) {
+            resolve();
+        } else {
+            reject();
+        }
+    })
+
+    p.then(() => {
+        console.log('Sending Email..');
+        sendEmail();
+    }).catch(error => console.log(error));
+
+});
+
+
 function validateForm() {
     if (validateName() && validateEmail()) {
         let phone = document.getElementById('myform_phone');
@@ -19,11 +38,9 @@ function validateForm() {
             fetch('/update', options).then(response => {
                 console.log(response);
             });
-            sendEmail();
-
-
-
+            return true
         }
+
         else {
             if (validatePhoneNumber()) {
                 console.log('name and email and phone valid');
@@ -41,11 +58,14 @@ function validateForm() {
                 fetch('/update', options).then(response => {
                     console.log(response);
                 });
-                sendEmail();
-
+                return true;
+            }
+            else {
+                return false;
             }
         }
     }
+
 }
 
 function sendEmail() {
@@ -57,12 +77,13 @@ function sendEmail() {
         headers: {
             'Content-Type': "application/json"
         },
-        body: JSON.stringify(data),
-
-    }
+        body: JSON.stringify(data)
+    };
     fetch('/send', options).then(response => {
-        console.log(response);
-    });
+        console.log('Success');
+    }).catch(err =>
+        console.log(err)
+    );
 }
 
 function getNameAndEmail() {
@@ -103,7 +124,7 @@ function validateEmail() {
     var regEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}\s{0,}$/;
     var emailAddress = document.getElementById('email').value;
     if (!regEmail.test(emailAddress)) {
-        alert("Please enter a valid phone number.");
+        alert("Please enter a valid email address.");
         document.getElementById('email').focus();
         return false;
     }else {

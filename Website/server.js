@@ -31,7 +31,6 @@ app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 app.post('/update', (req, res) => {
     let data = JSON.stringify(req.body, null, 2);
 
-
     // save the data to the data.json file
     if (!fs.existsSync(path.join(__dirname, 'public/data.json'))) {
         fs.closeSync(fs.openSync(path.join(__dirname, 'public/data.json'), 'w'));
@@ -42,7 +41,7 @@ app.post('/update', (req, res) => {
         console.log('The data was appended.');
     });
 
-    res.send();
+    res.end();
 
 });
 
@@ -92,15 +91,13 @@ app.post('/send', (req, res) => {
         text: 'Dear ' + name + ',\n\nThanks for your feedback!',
         html: output
     };
-
-
+    s
     transporter.sendMail(mailOptions,function(err,result){
         if(err){
             console.log('Error with sending message.');
             res.send({
                 message:err
             })
-
         }else{
             transporter.close();
             console.log('Message sent successfully.');
@@ -108,11 +105,8 @@ app.post('/send', (req, res) => {
             res.send({
                 message:'Email has been sent: check your inbox!'
             })
-
         }
     });
-
-    res.send();
 });
 
 
