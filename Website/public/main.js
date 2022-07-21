@@ -1,9 +1,9 @@
 
-
-function submitForm() {
+function validateForm() {
     if (validateName() && validateEmail()) {
-        if (document.getElementById('myform_phone').value == null) {
-            console.log('name and email valid');
+        let phone = document.getElementById('myform_phone');
+        if (phone.value !== null && phone.value === "") {
+            console.log('phone nothing.');
 
             const data = getAllData();
             // console.log(data);
@@ -19,11 +19,14 @@ function submitForm() {
             fetch('/update', options).then(response => {
                 console.log(response);
             });
+            sendEmail();
+
+
 
         }
         else {
             if (validatePhoneNumber()) {
-                console.log('name and email valid');
+                console.log('name and email and phone valid');
 
                 const data = getAllData();
                 // console.log(data);
@@ -34,16 +37,14 @@ function submitForm() {
                         'Content-Type': "application/json"
                     },
                     body: JSON.stringify(data),
-
                 }
                 fetch('/update', options).then(response => {
                     console.log(response);
                 });
+                sendEmail();
+
             }
         }
-
-
-
     }
 }
 

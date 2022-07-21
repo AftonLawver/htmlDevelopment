@@ -42,7 +42,7 @@ app.post('/update', (req, res) => {
         console.log('The data was appended.');
     });
 
-    res.end();
+    res.send();
 
 });
 
