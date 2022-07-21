@@ -28,7 +28,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 
 
-
 app.post('/update', (req, res) => {
     let data = JSON.stringify(req.body, null, 2);
 
@@ -48,26 +47,18 @@ app.post('/update', (req, res) => {
 });
 
 app.post('/send', (req, res) => {
-    // To send to me/owner of website
-    // const output = `
-    //     <p>You have a new contact request</p>
-    //     <h3>Contact Details</h3>
-    //     <ul>
-    //         <li>Name: ${req.body.name}</li>
-    //         <li>Email: ${req.body.email}</li>
-    //         <li>Address: ${req.body.address}</li>
-    //         <li>State: ${req.body.state}</li>
-    //         <li>City: ${req.body.city}</li>
-    //         <li>Zip: ${req.body.zipcode}</li>
-    //         <li>Phone: ${req.body.phone}</li>
-    //
-    //     </ul>
-    //     <h3>Message</h3>
-    //     <p>${req.body.comments}</p>
-    // `;
 
     let name = req.body['Name'];
     let email = req.body['Email'];
+
+    // To send to me/owner of website
+    const output = `
+        <h4>Dear ${name},</h4>
+        <p>Thanks for your feedback!</p>
+        <br>
+        <p>Best,</p>
+        <p>Afton Lawver</p>
+    `
 
     const myOAuth2Client = new OAuth2 (
         process.env.OAUTH_CLIENTID,
@@ -98,24 +89,30 @@ app.post('/send', (req, res) => {
         from: 'lawverap25@gmail.com',
         to: email,
         subject: 'Thanks for visiting my website!',
-        text: 'Dear ' + name + ',\n\nThanks for your feedback!'
+        text: 'Dear ' + name + ',\n\nThanks for your feedback!',
+        html: output
     };
 
 
     transporter.sendMail(mailOptions,function(err,result){
         if(err){
+            console.log('Error with sending message.');
             res.send({
                 message:err
             })
+
         }else{
             transporter.close();
+            console.log('Message sent successfully.');
+
             res.send({
                 message:'Email has been sent: check your inbox!'
             })
+
         }
     });
 
-    // res.send();
+    res.send();
 });
 
 

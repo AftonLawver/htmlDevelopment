@@ -1,6 +1,6 @@
 
 
-function submitForm(e) {
+function submitForm() {
     if (validateName() && validateEmail()) {
         if (document.getElementById('myform_phone').value == null) {
             console.log('name and email valid');
@@ -19,6 +19,7 @@ function submitForm(e) {
             fetch('/update', options).then(response => {
                 console.log(response);
             });
+
         }
         else {
             if (validatePhoneNumber()) {
