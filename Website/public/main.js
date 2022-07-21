@@ -8,13 +8,14 @@ function submitForm(e) {
         // console.log(data);
         const options = {
             method: 'POST',
+            // url: 'http://url.com/resource',
             headers: {
                 'Content-Type': "application/json"
             },
             body: JSON.stringify(data),
 
         }
-        fetch('/', options).then(response => {
+        fetch('/update', options).then(response => {
             console.log(response);
         });
 
@@ -23,10 +24,11 @@ function submitForm(e) {
 }
 
 function sendEmail() {
-    const data = getAllData();
+    const data = getNameAndEmail();
     // console.log(data);
     const options = {
         method: 'POST',
+        // url: 'http://url.com/resource',
         headers: {
             'Content-Type': "application/json"
         },
@@ -36,6 +38,13 @@ function sendEmail() {
     fetch('/send', options).then(response => {
         console.log(response);
     });
+}
+
+function getNameAndEmail() {
+
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    return { Name: name, Email: email};
 }
 
 function getAllData() {
@@ -51,10 +60,6 @@ function getAllData() {
     let comments = document.getElementById('comments').value;
     return {Date: date, Time: time, Name: name, Email: email, Address: address, City: city, State: state, Zipcode: zipcode,
         Phone: phone, Comments: comments};
-}
-
-function changeColor() {
-    document.getElementById('submit-button').style.background = 'red';
 }
 
 function validateName() {
