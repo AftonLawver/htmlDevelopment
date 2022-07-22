@@ -22,8 +22,6 @@ function validateForm() {
     if (validateName() && validateEmail()) {
         let phone = document.getElementById('myform_phone');
         if (phone.value !== null && phone.value === "") {
-            console.log('phone nothing.');
-
             const data = getAllData();
             // console.log(data);
             const options = {
@@ -38,13 +36,12 @@ function validateForm() {
             fetch('/update', options).then(response => {
                 console.log(response);
             });
+            document.getElementById('paragraph').innerHTML = 'Data received.'
             return true
         }
 
         else {
             if (validatePhoneNumber()) {
-                console.log('name and email and phone valid');
-
                 const data = getAllData();
                 // console.log(data);
                 const options = {
@@ -58,6 +55,7 @@ function validateForm() {
                 fetch('/update', options).then(response => {
                     console.log(response);
                 });
+                document.getElementById('paragraph').innerHTML = 'Data received.'
                 return true;
             }
             else {
@@ -80,7 +78,8 @@ function sendEmail() {
         body: JSON.stringify(data)
     };
     fetch('/send', options).then(response => {
-        console.log('Success');
+        console.log('Email sent successfully.');
+        document.getElementById('paragraph-2').innerHTML = 'Email Sent. Check your inbox.'
     }).catch(err =>
         console.log(err)
     );

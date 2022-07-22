@@ -47,7 +47,6 @@ app.post('/update', (req, res) => {
 
 app.post('/send', (req, res) => {
 
-    console.log('hello_1');
     let name = req.body['Name'];
     let email = req.body['Email'];
 
@@ -59,7 +58,6 @@ app.post('/send', (req, res) => {
         <p>Best,</p>
         <p>Afton Lawver</p>
     `
-    console.log('hello_2');
     const myOAuth2Client = new OAuth2 (
         process.env.OAUTH_CLIENTID,
         process.env.OAUTH_CLIENT_SECRET,
@@ -92,24 +90,26 @@ app.post('/send', (req, res) => {
         text: 'Dear ' + name + ',\n\nThanks for your feedback!',
         html: output
     };
-    console.log('hello_3');
+
     transporter.sendMail(mailOptions,function(err,result){
-        console.log('hello_4');
         if(err){
             console.log('Error with sending message.');
             res.send({
                 message:err
             })
         }else{
-            console.log('hello_5');
             transporter.close();
-            console.log('Message sent successfully.');
+            res.send({
+                message:'Email has been sent: check your inbox!'
+            })
+            res.send('Message sent successfully.');
 
             res.send({
                 message:'Email has been sent: check your inbox!'
             })
         }
         res.end();
+
     });
 });
 
